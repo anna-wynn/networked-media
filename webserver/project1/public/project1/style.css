@@ -1,0 +1,28 @@
+body{
+    background: url(cityglow.gif);
+  
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 1000;
+    font-size: xx-large;
+    color: white;
+    margin-top: 200;
+    margin-left: 400;
+    
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: large;
+    color: white;
+    margin-top: -20;
+    margin-left: 400;
+
+}
+
+
+
+

@@ -1,0 +1,31 @@
+body{
+    background: url(city3.jpg);
+    background-size: cover;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 1000;
+    font-size: xxx-large;
+    color: white;
+    margin-top: 200;
+    margin-left: 400;
+    background-color: #00008B;
+    
+
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+    color: white;
+    margin-top: 50;
+    margin-left: 300;
+    background-color: #00008B;
+}
+
+hr{
+    height: 5;
+    background: white;
+    border: none;
+}

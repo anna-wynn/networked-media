@@ -1,0 +1,66 @@
+/* Set global styles for the body */
+
+
+/* Style for input fields */
+input {
+    padding: 4px;
+    font-size: 1rem; /* Adjust font size */
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s; /* Smooth border color transition */
+    margin: 0 10px; /* Add horizontal margin for spacing */
+}
+
+
+input:focus {
+    border-color: #16b159; /* Darker blue on focus */
+}
+
+/* Style for buttons */
+button {
+    padding: 5px 15px;
+    font-size: 1rem; /* Adjust font size */
+    background-color: #5c86fa; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin-top: 2px; /* Add space above the button */
+}
+
+button:hover {
+    background-color: #16b159; /* Darker blue on hover */
+}
+
+/* Style for the waveform canvas */
+canvas {
+    display: block; /* Remove inline-block spacing */
+    margin: auto; /* Center the canvas */
+    background-color: #ffffff; /* White background for canvas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for text labels */
+div {
+    font-size: 1.2rem; /* Increase font size for labels */
+    margin-left: 5px; /* Space between input and label */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    input {
+        width: 40px; /* Adjust input width for small screens */
+    }
+
+    button {
+        width: 80%; /* Make button full width on small screens */
+    }
+
+    /* Center the button in smaller screens */
+    button {
+        margin: 10px auto; /* Auto margins for centering */
+        display: block; /* Block display for centering */
+    }
+}

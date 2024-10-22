@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Scout - Write a Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/writereview.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <nav class="nav-bar">
+                <div class="logo-search">
+                    <div class="logo">Snack Scout</div>
+                    <input type="text" placeholder="Search for a snack!">
+                </div>
+            </nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/reviews">Reviews</a></li>
+                <li><a href="/favourites">Favourites</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="write">
+        <h1>Write a Review!</h1>
+    </section>
+
+    <div class="seeposts">
+        <ul>
+            <li><a href="/posts">See Posts</a></li>
+        </ul>
+    </div>
+
+    <div class="app-container">
+      <div class="input-container">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+          <input type="text" name="text" placeholder="Write your review here...">
+          <input type="file" name="theimage">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+</body>
+</html>

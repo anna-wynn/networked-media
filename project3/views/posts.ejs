@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Snack Scout - See All Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/posts.css"> 
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="logo-search">
+          <div class="logo">Snack Scout</div>
+          <input type="text" placeholder="Search for a snack!">
+        </div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/favourites">Favourites</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="app-container">
+      <div class="nav-container">
+        <a href="/writereview">Make a Post</a>
+      </div>
+
+    <!-- the containerss -->
+      <div class="reviews-grid">
+        <% for(let i = 0; i < arrayToBeSent.length; i++) { %>
+          <div class="review-card">
+            <% if(arrayToBeSent[i].imgSrc) { %>
+              <div class="item-image">
+                <img src="<%= arrayToBeSent[i].imgSrc %>" alt="Review Image">
+              </div>
+            <% } else { %>
+              <div class="placeholder-image"></div>
+            <% } %>
+            
+            <div class="message">
+              <p><%= arrayToBeSent[i].text %></p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

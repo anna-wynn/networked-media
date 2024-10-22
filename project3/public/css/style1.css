@@ -1,0 +1,253 @@
+
+body {
+    font-family: 'Arima', cursive;
+    background-color: #f7f2dc;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #7fb069;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f4e6a2;
+}
+
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: #fcfafa;
+    margin-right: 20px; 
+}
+
+
+.logo-search input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 200px; 
+    flex-grow: 1;
+    max-width: 300px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    margin-top: 0px;
+    margin-left: 725px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c472d;
+    font-size: 25px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #e4d96f;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f0d79d;
+    box-shadow:  10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.hero-left h1 {
+    font-size: 80px;
+    color: #d47e41;
+    font-weight: 700;
+    margin-left: 80px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.hero-left p {
+    font-size: 30px;
+    color: #944b2f;
+    font-weight: 500;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.hero-right {
+    flex: 1;
+}
+
+.hero-right img {
+    max-width: 100%;
+    border-radius: 50px;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.special {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #d47e41;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.featured h1 {
+    font-size: 40px;
+    color: #714a40;
+    font-weight: 700;
+    margin-left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.featured p {
+    font-size: 20px;
+    color: #4d342e;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.featuredimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #d47e41;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.layspurple img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+   
+}
+
+.oreosakura img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pockygrape img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.crunchycheetos img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.featuredsnacknames {
+    background-color: #d47e41;
+}
+
+.nav-snack ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    gap: 8px; 
+    flex-wrap: wrap;
+    background-color: #d47e41;
+}
+
+.nav-snack ul li {
+    display: inline-block;
+}
+
+.nav-snack ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffeb33; 
+    padding: 20px 30px;
+    transition: color 0.3s ease; 
+}
+
+.nav-snack ul li a:hover {
+    color: #fefefe; 
+}
+
+
+.nav-snack {
+    background-color: #d47e41; 
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+
+/* Snack Categories */
+/* .snack-categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #fff7e6;
+}
+
+
+.smallgallery img {
+    width: 45%;
+    border-radius: 15px;
+    text-align: center;
+
+} */

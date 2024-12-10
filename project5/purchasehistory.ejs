@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase History</title>
+    <link rel="stylesheet" href="/css/purchasehistory.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>A Gift for You, A Gift for Me</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/wishlist">Wishlist</a></li>
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/thankyou">Thank You</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="purchase-history-section">
+            <h2>Your Purchase History</h2>
+            <div class="purchase-history-items">
+                <% if (items.length === 0) { %>
+                    <p>No items have been added to your purchase history yet. Start by uploading something!</p>
+                <% } else { %>
+                    <% items.forEach((item, index) => { %>
+                        <div class="purchase-item">
+                            <img src="<%= item.imagePath %>" alt="Purchased Item">
+                            <form action="/purchasehistory/update" method="POST">
+                                <input type="hidden" name="index" value="<%= index %>">
+                                <label>
+                                    <input type="checkbox" <%= item.purchased ? "checked disabled" : "" %> onchange="this.form.submit()"> Purchased
+                                </label>
+                            </form>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

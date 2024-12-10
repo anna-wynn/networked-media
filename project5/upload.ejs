@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="/css/upload.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>A Gift for You, A Gift for Me</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/wishlist">Wishlist</a></li>
+                <li><a href="/purchasehistory">Purchase History</a></li>
+                <li><a href="/thankyou">Thank You</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="upload-section">
+            <h2>Upload Your Wishlist Item</h2>
+            <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="imageUpload">Upload Picture:</label>
+                    <input type="file" id="imageUpload" name="itemImage" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="caption">Write a Caption (minimum 200 characters):</label>
+                    <textarea id="caption" name="itemCaption" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="purchaseLink">Add a Purchase Link:</label>
+                    <input type="url" id="purchaseLink" name="itemLink" placeholder="https://example.com" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- JavaScript validation script -->
+    <script>
+        const caption = document.getElementById('caption');
+        const form = document.getElementById('uploadForm');
+
+        form.addEventListener('submit', (e) => {
+            if (caption.value.length < 200) {
+                e.preventDefault();
+                alert('Caption must be at least 200 characters long.');
+            }
+        });
+    </script>
+</body>
+</html>

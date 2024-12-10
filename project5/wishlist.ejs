@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="/css/wishlist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>A Gift for You, A Gift for Me</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/purchasehistory">Purchase History</a></li>
+                <li><a href="/thankyou">Thank You</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="wishlist-section">
+            <h2>Your Wishlist</h2>
+            <div class="wishlist-items">
+                <% if (items.length === 0) { %>
+                    <p>No items have been added to your wishlist yet. Start by uploading something!</p>
+                <% } else { %>
+                    <% items.forEach((item, index) => { %>
+                        <div class="wishlist-item" onclick="openModal('<%= item.imagePath %>', '<%= item.caption %>', '<%= item.link %>', <%= index %>)">
+                            <img src="<%= item.imagePath %>" alt="Wishlist Item">
+                            
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <!--a modal??-->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="Enlarged Wishlist Item">
+            <p id="modalCaption"></p>
+            
+            <a id="modalLink" href="#" target="_blank" class="purchase-btn">Purchase Now</a>
+            <button id="deleteButton" class="delete-btn" onclick="deleteItem()">Delete</button>
+        </div>
+    </div>
+
+    
+    <script>
+        let currentItemIndex = null;
+
+        function openModal(imagePath, caption, link, index) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalLink = document.getElementById('modalLink');
+
+    modalImage.src = imagePath;
+    modalCaption.textContent = caption;
+
+    if (link) {
+        modalLink.href = link; // Correctly set the href to the actual link
+    } else {
+        modalLink.href = "#"; // Fallback in case the link is undefined
+    }
+
+    modal.style.display = 'flex';
+    currentItemIndex = index; // Store the current item's index
+}
+
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    currentItemIndex = null; // Reset the current item's index
+}
+
+        async function deleteItem() {
+            if (currentItemIndex !== null) {
+                try {
+                    const response = await fetch(`/wishlist/${currentItemIndex}`, {
+                        method: 'DELETE',
+                    });
+
+                    if (response.ok) {
+                        // Reload the page to update the list
+                        window.location.reload();
+                    } else {
+                        alert('Failed to delete the item.');
+                    }
+                } catch (error) {
+                    console.error('Error deleting the item:', error);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
